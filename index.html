@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love Rupshikha</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #8B0000, #ffffff);
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+  }
+
+  h1 {
+    text-align: center;
+    color: #8B0000;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: rgba(255,255,255,0.85); /* semi-transparent white behind title */
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 12px;
+  }
+
+  h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #B22222;
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+  }
+
+  .paragraph {
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    line-height: 1.7;
+    font-size: 1.15rem;
+    color: #333;
+    transition: transform 0.2s;
+  }
+
+  .paragraph:hover {
+    transform: translateY(-3px);
+  }
+
+  .highlight {
+    color: #B22222;
+    font-weight: bold;
+  }
+
+  .heart {
+    position: absolute;
+    font-size: 18px;
+    color: red;
+    opacity: 0.7;
+    animation: float 5s linear infinite;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100vh); opacity: 0; }
+  }
+
+  #musicBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 20;
+    background: rgba(255,255,255,0.4);
+    border: none;
+    color: #8B0000;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  #musicBtn:hover {
+    background: rgba(255,255,255,0.7);
+  }
+</style>
+</head>
+<body>
+
+<audio id="bg-music" src="piano.mp3" autoplay loop></audio>
+
+<div class="container">
+  <h1>FOR MY LOVE RUPSHIKHA</h1>
+  <h2>Everything I feel for you, everything – for my love, Rupshikha</h2>
+
+  <div class="paragraph">You're <span class="highlight">bold</span>, honest, and fearless – even when it makes things harder, you stay real.</div>
+  <div class="paragraph">You speak your mind, and somehow that’s what keeps me grounded.</div>
+  <div class="paragraph">You get angry, stubborn, and egoistic sometimes – but even then, I always see your love.</div>
+  <div class="paragraph">You stood by me when I couldn’t give you all you deserve. That loyalty means everything.</div>
+  <div class="paragraph">You understand me even when I struggle to explain myself properly.</div>
+  <div class="paragraph">Distance never made you distant – each short meeting feels like a whole new life.</div>
+  <div class="paragraph">You never left, even when you had reasons to. That’s a kind of love I can’t measure.</div>
+  <div class="paragraph">I know I am not perfect – I mess up and fall short – but you still choose me.</div>
+  <div class="paragraph">I am learning, working, and growing because you make me want to be better every day.</div>
+  <div class="paragraph">You are not just someone I love – you are the reason I try to be the best version of myself.</div>
+  <div class="paragraph">I know I haven’t been the perfect boyfriend. But I am trying, every day, in quiet ways you might not see. One day, I’ll give you everything you ever wished for, because you are the only one who never stopped believing in me.</div>
+</div>
+
+<button id="musicBtn">⏯️</button>
+
+<script>
+  // Floating hearts
+  for(let i = 0; i < 25; i++) {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerHTML = '❤';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (12 + Math.random() * 20) + 'px';
+    heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+    heart.style.animationDelay = (Math.random() * 5) + 's';
+    document.body.appendChild(heart);
+  }
+
+  // Music play/pause
+  const music = document.getElementById('bg-music');
+  const btn = document.getElementById('musicBtn');
+  btn.addEventListener('click', () => {
+    if(music.paused){
+      music.play();
+      btn.textContent = '⏸️';
+    } else {
+      music.pause();
+      btn.textContent = '▶️';
+    }
+  });
+</script>
+
+</body>
+</html>
